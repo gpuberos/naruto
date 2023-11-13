@@ -18,6 +18,11 @@ body {
 
 /* Navigation & Burger Menu */
 
+.navbar {
+    position: relative;
+    width: 100%;
+}
+
 label {
     display: block;
     position: fixed;
