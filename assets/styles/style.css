@@ -1,0 +1,351 @@
+/* ==========================================================================
+  @Import CSS
+  ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+/* ==========================================================================
+  CSS Reset
+  ========================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+}
+
+/* ==========================================================================
+  Variables
+  ========================================================================== */
+
+:root {
+    --gradient-header: linear-gradient(180deg, #00005c 0%, #000 100%);
+    --color-primary: #dc2314;
+    --color-secondary: #ffe100;
+    --color-tertiary: #ec4b88;
+    --color-quaternary: #00005c;
+    --color-title: #dc2314;
+    --color-text: #00005c;
+
+    --font-family-title: 'Bebas Neue', sans-serif;
+    --font-family-text: 'Open Sans', sans-serif;
+}
+
+/* ==========================================================================
+  Custom CSS
+  ========================================================================== */
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: var(--font-family-text);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/*
+  Header
+  ========================================================================== */
+
+header {
+    border-bottom: 4px solid var(--color-quaternary);
+    background: var(--gradient-header);
+}
+
+header .container {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    
+    .top-header & {
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    
+    .bottom-header & {
+        align-items: center;
+        padding-top: 34px;
+        padding-bottom: 34px;
+    }
+
+    & .logo {
+        flex-grow: 1;
+    }
+
+    & .navbar {
+        flex-grow: 2;
+    }
+}
+
+.baseline {
+    font-family: var(--font-family-title);
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    margin-left: 80px;
+
+    span:first-child {
+        color: var(--color-tertiary);
+    }
+    
+    span:last-child {
+        color: var(--color-primary);
+    }
+}
+
+.top-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.40);
+}
+
+/* Top Feed News */
+
+.feed {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    & span {
+        display: flex;
+    }
+
+    .badge {
+        padding: 5px 10px;
+        border: 1px solid var(--color-secondary);
+        border-radius: 26px;
+        font-family: var(--font-family-title);
+        font-size: 16px;
+        line-height: 1;
+        text-transform: uppercase;
+        color: var(--color-secondary);
+    }
+    
+    .desc {
+        height: 100%;
+        font-size: 15px;
+        color: #fff;
+    }
+}
+
+/* Top Contact Info */
+
+.top-contact a {
+    color: #fff;
+    font-size: 15px;
+        
+    &:hover,
+    &:focus {
+        color: var(--color-primary);
+        
+        &::before {
+            color: var(--color-primary);
+        }
+    }
+
+    &::before {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 600;
+        margin-right: 6px;
+        color: rgba(255, 255, 255, 0.50);
+    }
+
+    &[href^="tel:"]::before {
+        content: "\f095";
+    }
+
+    &[href^="mailto:"]::before {
+        content: "\f0e0";
+    }
+}
+
+/* Menu NavBar */
+
+.menu-list {
+    display: flex;
+
+    .top-contact & {
+        align-items: center;
+        gap: 24px;
+    }
+    
+    .navbar & {
+        gap: 90px;
+    }
+
+    .social-networks & {
+        gap: 10px;
+    }
+}
+
+.navbar a {
+    font-family: var(--font-family-title);
+    font-size: 24px;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+
+    &:hover,
+    &:focus,
+    &.current {
+        color: var(--color-primary);
+    }
+}
+
+/* Hero */
+
+.hero {
+    width: 100%;
+    height: 280px;
+    border-bottom: 4px solid var(--color-quaternary);
+    background: center / cover url(/assets/images/header_banner.jpg);
+}
+
+/*
+  Main
+  ========================================================================== */
+
+
+main {
+    flex-grow: 1;
+
+    .container {
+        display: flex;
+        width: 80%;
+        margin: 70px auto;
+    }
+
+    h1 {
+        margin-bottom: 18px;
+        font-size: 26px;
+        color: var(--color-primary);
+    }
+}
+
+h1, .copyright, .social-networks h3 {
+    font-family: var(--font-family-title);
+    text-transform: uppercase;
+}
+
+/* Contact Form */
+
+.contact {
+    margin: 0 auto;
+    width: 460px;
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        margin-top: 32px;
+        display: flex;
+        gap: 10px;
+        font-family: var(--font-family-title);
+        font-size: 18px;
+
+        i {
+            color: rgba(0, 0, 0, 0.50);
+            font-family: var(--font-family-text);
+            font-size: 14px;
+        }
+    }
+
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 16px;
+    border: 1px solid var(--color-tertiary);
+    border-radius: 10px;
+    background: #fff;
+    font-family: var(--font-family-text);
+
+    &:focus {
+        outline-color: var(--color-quaternary);
+    }
+}
+
+/* Button */
+
+.button {
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+.button a, input[type="submit"] {
+    margin-top: 22px;
+    padding: 10px 18px;
+    border: 2px solid var(--color-primary);
+    border-radius: 36px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--color-primary);
+
+    &:hover,
+    &:focus {
+        color: var(--color-primary);
+        background-color: transparent;
+    }
+}
+
+/*
+  Footer
+  ========================================================================== */
+
+footer {
+    display: flex;
+    padding: 36px 0;
+    border-top: 4px solid var(--color-primary);
+    background-color: var(--color-secondary);
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+.copyright, .social-networks h3 {
+    font-size: 16px;
+}
+
+.social-networks h3 {
+    margin-bottom: 12px;
+}
+
+.social-networks a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: #fff;
+
+    &:hover,
+    &:focus {
+        background-color: transparent;
+        color: var(--color-primary);
+    }
+}
