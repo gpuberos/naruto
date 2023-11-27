@@ -169,6 +169,7 @@ header .container {
 .top-contact a {
     color: #fff;
     font-size: .938rem;
+    transition: all 0.5s ease;
         
     &:hover,
     &:focus {
@@ -184,6 +185,7 @@ header .container {
         font-weight: 600;
         margin-right: 6px;
         color: rgba(255, 255, 255, 0.50);
+        transition: all 0.5s ease;
     }
 
     &[href^="tel:"]::before {
@@ -219,6 +221,7 @@ header .container {
     font-size: 1.5rem;
     text-transform: uppercase;
     color: var(--color-secondary);
+    transition: all 0.5s ease;
 
     &:hover,
     &:focus,
@@ -318,6 +321,7 @@ textarea {
     font-weight: 600;
     color: #fff;
     background-color: var(--color-primary);
+    transition: all 0.5s ease;
 
     &:hover,
     &:focus {
@@ -363,6 +367,7 @@ footer {
     border-radius: 50%;
     background-color: var(--color-primary);
     color: #fff;
+    transition: all 0.5s ease;
 
     &:hover,
     &:focus {
