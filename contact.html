@@ -21,7 +21,7 @@
                     <p class="feed"><span class="badge">New</span> <span class="desc">Ce week-end, Tokyo Show à Aix-en-Provence !</span></p>
                 </div>
                 <div class="top-contact">
-                    <ul class="menu-list">
+                    <ul class="menu__box">
                         <li><a href="tel:0490000000">04.90.00.00.00</a></li>
                         <li><a href="mailto:contact@naruto.fr">contact@naruto.fr</a></li>
                     </ul>
@@ -35,8 +35,12 @@
                         <img src="../assets/images/naruto_logo.png" alt="Naruto">
                         <p class="baseline">Services <span>&</span> Shop <span>/</span> Aix-en-Provence</p>
                 </div>
-                <nav class="navbar">
-                    <ul class="menu-list">
+                
+                <nav class="navbar is-mobile">
+                    <input id="menu__toggle" type="checkbox" aria-label="Toggle Navigation">
+                    <label class="menu__btn" for="menu__toggle"></label>
+
+                    <ul class="menu__box">
                         <li><a href="index.html">Accueil</a></li>
                         <li><a href="#">Produits</a></li>
                         <li><a href="#">Services</a></li>
@@ -78,7 +82,7 @@
             <p class="copyright">Copyright 2023 Naruto</p>
             <section class="social-networks">
                 <h3>Réseaux sociaux</h3>
-                <ul class="menu-list">
+                <ul class="menu__box">
                     <li><a href="#" data-text="twitter" title="Twitter (X)"><i class="fa-brands fa-x-twitter"></i></a></li>
                     <li><a href="#" data-text="instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
                     <li><a href="#" data-text="pinterest" title="Pinterest"><i class="fa-brands fa-pinterest"></i></a></li>
