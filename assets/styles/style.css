@@ -77,9 +77,11 @@ textarea {
   ========================================================================== */
 
 body {
+    /* Footer to Bottom */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+
     font-family: var(--font-family-text);
     font-size: var(--font-size-14);
     font-weight: 400;
@@ -122,17 +124,18 @@ header .container {
 }
 
 .baseline {
+    margin-left: 80px;
+    
     font-family: var(--font-family-title);
     font-size: var(--font-size-15);
     font-weight: 400;
     color: #fff;
-    margin-left: 80px;
-
-    span:first-child {
+    
+    & span:first-child {
         color: var(--color-tertiary);
     }
     
-    span:last-child {
+    & span:last-child {
         color: var(--color-primary);
     }
 }
@@ -254,7 +257,7 @@ header .container {
   ========================================================================== */
 
 main {
-    flex-grow: 1;
+    flex-grow: 1; /* Footer to Bottom */
 
     .container {
         display: flex;
@@ -262,7 +265,7 @@ main {
         margin: 70px auto;
     }
 
-    h1 {
+    & h1 {
         margin-bottom: 18px;
         font-size: var(--font-size-26);
         color: var(--color-primary);
@@ -282,19 +285,19 @@ h1,
     margin: 0 auto;
     width: 460px;
 
-    form {
+    & form {
         display: flex;
         flex-direction: column;
     }
 
-    label {
+    & label {
         margin-top: 32px;
         display: flex;
         gap: .625rem;
         font-family: var(--font-family-title);
         font-size: var(--font-size-18);
 
-        i {
+        & i {
             color: rgba(0, 0, 0, 0.50);
             font-family: var(--font-family-text);
             font-size: var(--font-size-14);
@@ -334,7 +337,6 @@ input[type="submit"] {
     font-weight: 600;
     color: #fff;
     background-color: var(--color-primary);
-    transition: all 0.5s ease;
 
     &:hover,
     &:focus {
@@ -388,7 +390,7 @@ footer {
         color: var(--color-primary);
     }
 
-    i {
+    & i {
         font-size: var(--font-size-16);
     }
 }
@@ -424,6 +426,9 @@ footer {
     /* Burger Menu Full CSS */
 
     .is-mobile {
+        position: fixed;
+        right: 10%;
+
         display: flex;
         justify-content: center;
         align-items: center;
@@ -457,17 +462,16 @@ footer {
         }
 
         .menu__box {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100vh;
+            height: 100%;
             z-index: 0;
 
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 32px;
 
             font-size: var(--font-size-24);
             background-color: #000;
