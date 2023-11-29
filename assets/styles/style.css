@@ -55,12 +55,15 @@ textarea {
     /* Gradients */
     --gradient-header: linear-gradient(180deg, #00005c 0%, #000 100%);
 
+    /* Overlay */
+    --background-menu-overlay: #000;
+
     /*
       Fonts
       ========================================================================== */
     
     /* Font Family */
-     --font-family-title: 'Bebas Neue', sans-serif;
+    --font-family-title: 'Bebas Neue', sans-serif;
     --font-family-text: 'Open Sans', sans-serif;
 
     /* Font Size */
@@ -99,6 +102,7 @@ header {
 header .container {
     display: flex;
     width: 80%;
+    max-width: 1536px;
     margin: 0 auto;
     
     .top-header & {
@@ -109,7 +113,6 @@ header .container {
     }
     
     .bottom-header & {
-        align-items: center;
         padding-top: 34px;
         padding-bottom: 34px;
     }
@@ -119,6 +122,8 @@ header .container {
     }
 
     .navbar {
+        display: flex;
+        align-items: center;
         flex-grow: 2;
     }
 }
@@ -179,7 +184,14 @@ header .container {
     color: #fff;
     font-size: var(--font-size-15);
         
-    &:hover,
+    &:hover {
+        color: var(--color-primary);
+        
+        &::before {
+            color: var(--color-primary);
+        }
+    }
+
     &:focus {
         color: var(--color-primary);
         
@@ -236,8 +248,14 @@ header .container {
         color: var(--color-secondary);
     }
 
-    &:hover,
-    &:focus,
+    &:hover {
+        color: var(--color-primary);
+    }
+
+    &:focus {
+        color: var(--color-primary);
+    }
+
     &.current {
         color: var(--color-primary);
     }
@@ -262,6 +280,7 @@ main {
     .container {
         display: flex;
         width: 80%;
+        max-width: 1536px;
         margin: 70px auto;
     }
 
@@ -338,7 +357,11 @@ input[type="submit"] {
     color: #fff;
     background-color: var(--color-primary);
 
-    &:hover,
+    &:hover {
+        color: var(--color-primary);
+        background-color: transparent;
+    }
+
     &:focus {
         color: var(--color-primary);
         background-color: transparent;
@@ -360,6 +383,7 @@ footer {
         justify-content: space-between;
         align-items: center;
         width: 80%;
+        max-width: 1536px;
         margin: 0 auto;
     }
 }
@@ -384,7 +408,11 @@ footer {
     background-color: var(--color-primary);
     color: #fff;
 
-    &:hover,
+    &:hover {
+        background-color: transparent;
+        color: var(--color-primary);
+    }
+
     &:focus {
         background-color: transparent;
         color: var(--color-primary);
@@ -459,7 +487,7 @@ footer {
         }
 
         .menu__box {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -471,7 +499,7 @@ footer {
             align-items: center;
 
             font-size: var(--font-size-24);
-            background-color: #000;
+            background: var(--background-menu-overlay);
             
             .navbar & {
                 gap: 2rem;
@@ -479,12 +507,20 @@ footer {
         }
     }
 
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 108px;
+        width: 100%;
+    }
+
     main {
+        margin-top: 108px;
         .container {
             margin: 36px auto;
         }
     }
-
 }
 
 /* Medium devices (tablets, less than 992px) */
@@ -526,8 +562,11 @@ footer {
     header .container {
         justify-content: space-between;
         
-        .logo, 
-        .navbar  {
+        .logo {
+            flex-grow: 0;
+        }
+
+        .navbar {
             flex-grow: 0;
         }
     }
