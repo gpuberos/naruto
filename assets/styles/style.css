@@ -231,7 +231,7 @@ header .container {
     }
     
     .navbar & {
-        gap: 5.625rem;
+        gap: 5rem;
     }
 
     .social-networks & {
@@ -240,6 +240,7 @@ header .container {
 }
 
 .menu__box li a {
+    text-wrap: nowrap;
 
     .navbar & {
         font-size: var(--font-size-24);
@@ -487,11 +488,11 @@ footer {
         }
 
         .menu__box {
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 100vh;
             z-index: 0;
 
             flex-direction: column;
