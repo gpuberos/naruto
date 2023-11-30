@@ -1,9 +1,3 @@
-  /**
-   * TODO?
-   * Add burger menu (Used Input checkbox or test prototype idea with <details> HTML element) (Waiting)
-   * Adapt design to responsive with Media Queries (In Progress - Line 374)
-   */
-
 /* ==========================================================================
   @Import CSS
   ========================================================================== */
@@ -184,15 +178,7 @@ header .container {
     color: #fff;
     font-size: var(--font-size-15);
         
-    &:hover {
-        color: var(--color-primary);
-        
-        &::before {
-            color: var(--color-primary);
-        }
-    }
-
-    &:focus {
+    &:is(:hover, :focus) {
         color: var(--color-primary);
         
         &::before {
@@ -249,15 +235,7 @@ header .container {
         color: var(--color-secondary);
     }
 
-    &:hover {
-        color: var(--color-primary);
-    }
-
-    &:focus {
-        color: var(--color-primary);
-    }
-
-    &.current {
+    &:is(:hover, :focus, .current) {
         color: var(--color-primary);
     }
 }
@@ -335,7 +313,7 @@ textarea {
     background: #fff;
     font-family: var(--font-family-text);
 
-    &:focus {
+    &:is(:focus) {
         outline-color: var(--color-quaternary);
     }
 }
@@ -358,14 +336,9 @@ input[type="submit"] {
     color: #fff;
     background-color: var(--color-primary);
 
-    &:hover {
+    &:is(:hover, :focus) {
         color: var(--color-primary);
-        background-color: transparent;
-    }
-
-    &:focus {
-        color: var(--color-primary);
-        background-color: transparent;
+        background-color: initial;
     }
 }
 
@@ -409,13 +382,8 @@ footer {
     background-color: var(--color-primary);
     color: #fff;
 
-    &:hover {
-        background-color: transparent;
-        color: var(--color-primary);
-    }
-
-    &:focus {
-        background-color: transparent;
+    &:is(:hover, :focus) {
+        background-color: initial;
         color: var(--color-primary);
     }
 
