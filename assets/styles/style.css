@@ -258,9 +258,26 @@ main {
 
     .container {
         display: flex;
+        flex-direction: column;
         width: 80%;
         max-width: 1536px;
         margin: 70px auto;
+    }
+
+    .about {
+        & p {
+            margin-bottom: 32px;
+        }
+
+        & section:last-child p {
+            margin-bottom: 0;
+        }
+    }
+
+    .services {
+        & section:first-child p {
+            margin-bottom: 42px;
+        }
     }
 
     & h1 {
@@ -270,7 +287,51 @@ main {
     }
 }
 
-h1, 
+/* Services Cards */
+
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 54px;
+    max-width: 1038px;
+    margin: 0 auto;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    max-width: 310px;
+    overflow: hidden;
+}
+
+.card-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.card-media img {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--color-tertiary);
+}
+
+.card-content {
+    padding-top: 18px;
+}
+  
+.card-headline {
+    margin-bottom: 18px;
+    font-size: var(--font-size-26);
+    font-family: var(--font-family-title);
+    text-transform: uppercase;
+    color: var(--color-primary);
+}
+
+h1,
 .copyright, 
 .social-networks h3 {
     font-family: var(--font-family-title);
@@ -538,5 +599,9 @@ footer {
         .navbar {
             flex-grow: 0;
         }
+    }
+
+    .cards {
+        gap: 34px 24px;
     }
 }
